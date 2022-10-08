@@ -1,0 +1,16 @@
+$0000 : EE_Zerro               : 2 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\main.alp
+$0002 : ee_ms_mode             : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0003 : ee_ms_afterReset       : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0004 : ee_ms_currentProg      : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0005 : ee_ms_Prog1            : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0125 : ee_ms_Prog2            : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0245 : ee_ms_Prog3            : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0365 : ee_ms_sourceProg1      : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0366 : ee_ms_sourceProg1_up   : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0367 : ee_ms_sourceProg1_down : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0368 : ee_ms_sourceProg2      : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$0369 : ee_ms_sourceProg2_up   : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$036A : ee_ms_sourceProg2_down : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$036B : ee_ms_sourceProg3      : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$036C : ee_ms_sourceProg3_up   : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg
+$036D : ee_ms_sourceProg3_down : 1 bytes : D:\work\MultiSwitch\Firmwares\Base_v2\multis.alg

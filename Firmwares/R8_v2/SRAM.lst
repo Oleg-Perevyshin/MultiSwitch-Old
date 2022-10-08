@@ -1,0 +1,17 @@
+$0100 : PWM_Level           : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\PWM.alg
+$0108 : PWM_Pos             : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\PWM.alg
+$0109 : PWM_Effect_Counter  : 2 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\PWM.alg
+$010B : RND                 : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\RND.alg
+$010C : EX_Key_Dreb_Cnt     : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\EX_Key.alg
+$0114 : EX_Key_Hold_Cnt     : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\EX_Key.alg
+$0115 : STimer_Counter      : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\STimer.alg
+$0116 : STimer_Counter_Stop : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\STimer.alg
+$0117 : r8_pacCounter       : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\r8.alg
+$0118 : r8_type             : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\r8.alg
+$0119 : r8_key              : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\r8.alg
+$011A : r8_data             : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\r8.alg
+$011B : iic_pacCounter      : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\iic.alg
+$011C : iic_pac             : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\iic.alg
+$011C : iic_type            : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\iic.alg
+$011D : iic_key             : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\iic.alg
+$011E : iic_data            : 1 bytes : D:\work\MultiSwitch\Firmwares\R8_v2\iic.alg

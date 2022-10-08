@@ -1,0 +1,16 @@
+$0000 : EE_Zerro               : 2 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\main.alp
+$0002 : ee_ms_mode             : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0003 : ee_ms_afterReset       : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0004 : ee_ms_currentProg      : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0005 : ee_ms_Prog1            : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0125 : ee_ms_Prog2            : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0245 : ee_ms_Prog3            : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0365 : ee_ms_sourseProg1      : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0366 : ee_ms_sourseProg1_up   : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0367 : ee_ms_sourseProg1_down : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0368 : ee_ms_sourseProg2      : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$0369 : ee_ms_sourseProg2_up   : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$036A : ee_ms_sourseProg2_down : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$036B : ee_ms_sourseProg3      : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$036C : ee_ms_sourseProg3_up   : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg
+$036D : ee_ms_sourseProg3_down : 1 bytes : D:\Projects\MultiSwitch\Firmwares\MultiSwitch_MCU_base\multis.alg

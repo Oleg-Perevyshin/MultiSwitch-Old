@@ -1,0 +1,8 @@
+$0100 : PWM_Level           : 1 bytes : D:\anwork\multiswitch\MultiSwitch_MCU_r8\PWM.alg
+$0108 : PWM_Pos             : 1 bytes : D:\anwork\multiswitch\MultiSwitch_MCU_r8\PWM.alg
+$0109 : PWM_Effect_Counter  : 2 bytes : D:\anwork\multiswitch\MultiSwitch_MCU_r8\PWM.alg
+$010B : RND                 : 1 bytes : D:\anwork\multiswitch\MultiSwitch_MCU_r8\RND.alg
+$010C : EX_Key_Dreb_Cnt     : 1 bytes : D:\anwork\multiswitch\MultiSwitch_MCU_r8\EX_Key.alg
+$0114 : EX_Key_Hold_Cnt     : 1 bytes : D:\anwork\multiswitch\MultiSwitch_MCU_r8\EX_Key.alg
+$0115 : STimer_Counter      : 1 bytes : D:\anwork\multiswitch\MultiSwitch_MCU_r8\STimer.alg
+$0116 : STimer_Counter_Stop : 1 bytes : D:\anwork\multiswitch\MultiSwitch_MCU_r8\STimer.alg

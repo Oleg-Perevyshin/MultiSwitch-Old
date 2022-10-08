@@ -1,0 +1,1462 @@
+$0000: $C2E2:  C: goto $2E3 (RJMP)
+$0001: $9518:  C: RETI
+$0002: $9518:  C: RETI
+$0003: $9518:  C: RETI
+$0004: $9518:  C: RETI
+$0005: $C206:  C: goto $20C (RJMP)
+$0006: $9518:  C: RETI
+$0007: $9518:  C: RETI
+$0008: $9518:  C: RETI
+$0009: $9518:  C: RETI
+$000A: $9518:  C: RETI
+$000B: $9518:  C: RETI
+$000C: $9518:  C: RETI
+$000D: $9518:  C: RETI
+$000E: $9518:  C: RETI
+$000F: $9518:  C: RETI
+$0010: $C04D:  C: goto $5E (RJMP)
+$0011: $9518:  C: RETI
+$0012: $9518:  C: RETI
+$0013: $9518:  C: RETI
+$0014: $9518:  C: RETI
+$0015: $9518:  C: RETI
+$0016: $9518:  C: RETI
+$0017: $9518:  C: RETI
+$0018: $C24C:  C: goto $265 (RJMP)
+$0019: $9518:  C: RETI
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\Wait.alg    ***********
+-----          V: _Wait_ms_
+               F: r16:Word ->  ...
+$001A: $930F:     r16 ->
+$001B: $931F:     r17 ->
+-----          L: 
+               F: (1000*CPU_Clock_Frequency/1000000-(9+8)-2)/4 -> r16:Word  ...
+$001C: $EC0B:     $CB -> r16
+$001D: $E017:     $07 -> r17
+-----          L: 
+               C: if (r16:Word --) then goto $001E ...
+$001E: $5001:     r16 - $01
+$001F: $4010:     r17 - $00 -
+$0020: $F7E9:     if (Z=0) then goto $1E
+$0021: $0000:  F: NOP (NOP)
+-----          L: 
+-----          L: 
+-----          L: 
+$0022: $0000:  F: NOP (NOP)
+-----          L: 
+               F: -> r16:Word  ...
+$0023: $911F:     -> r17
+$0024: $910F:     -> r16
+-----          L: 
+               F: r16:Word ->  ...
+$0025: $930F:     r16 ->
+$0026: $931F:     r17 ->
+-----          L: 
+               F: (1000*CPU_Clock_Frequency/1000000-(4+8)-2)/4 -> r16:Word  ...
+$0027: $EC0C:     $CC -> r16
+$0028: $E017:     $07 -> r17
+-----          L: 
+               C: if (r16:Word --) then goto $0029 ...
+$0029: $5001:     r16 - $01
+$002A: $4010:     r17 - $00 -
+$002B: $F7E9:     if (Z=0) then goto $29
+$002C: $0000:  F: NOP (NOP)
+-----          L: 
+-----          L: 
+-----          L: 
+$002D: $0000:  F: NOP (NOP)
+-----          L: 
+$002E: $0000:  F: NOP (NOP)
+-----          L: 
+               F: -> r16:Word  ...
+$002F: $911F:     -> r17
+$0030: $910F:     -> r16
+               C: if (r16:Word --) then goto $0025 ...
+$0031: $5001:     r16 - $01
+$0032: $4010:     r17 - $00 -
+$0033: $F789:     if (Z=0) then goto $25
+$0034: $0000:  F: NOP (NOP)
+$0035: $9508:  F: RET (ret)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\PWM.alg    ***********
+-----          V: _PWM_Event_Cyclic_action
+$0036: $932F:  F: r18 -> (Temp ->)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\main.alp    ***********
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0037: $D084:  F: rcall $BC (_EX_Key_Cyclic_Call)
+-----          L: 
+-----          L: 
+-----          L: 
+$0038: $D191:  F: rcall $1CA (_STimer_Cyclic_Call)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\PWM.alg    ***********
+-----          L: 
+-----          L: 
+$0039: $912F:  F: -> r18 (-> Temp)
+$003A: $9508:  F: RET (ret)
+-----          V: _PWM_Init
+-----          L: 
+-----          L: 
+$003B: $9A21:  F: 1 -> p$04.1 (1 -> DDR_PWM_0)
+-----          L: 
+-----          L: 
+$003C: $9A23:  F: 1 -> p$04.3 (1 -> DDR_PWM_1)
+-----          L: 
+-----          L: 
+$003D: $9A25:  F: 1 -> p$04.5 (1 -> DDR_PWM_2)
+-----          L: 
+-----          L: 
+$003E: $9A39:  F: 1 -> p$07.1 (1 -> DDR_PWM_3)
+-----          L: 
+-----          L: 
+$003F: $9A22:  F: 1 -> p$04.2 (1 -> DDR_PWM_4)
+-----          L: 
+-----          L: 
+$0040: $9A24:  F: 1 -> p$04.4 (1 -> DDR_PWM_5)
+-----          L: 
+-----          L: 
+$0041: $9A38:  F: 1 -> p$07.0 (1 -> DDR_PWM_6)
+-----          L: 
+-----          L: 
+$0042: $9A3A:  F: 1 -> p$07.2 (1 -> DDR_PWM_7)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0043: $E003:  S: $03 -> r16 ($03->r16)
+$0044: $BD04:  S: r16 -> p$24 (r16->TCCR0A)
+$0045: $E00A:  S: $0A -> r16 ($0A->r16)
+$0046: $BD05:  S: r16 -> p$25 (r16->TCCR0B)
+               F: CPU_Clock_Frequency/PWM_FREQUENCY/8/256 -> OCR0A  ...
+$0047: $E207:     $27 -> r16
+$0048: $BD07:     r16 -> p$27
+-----          L: 
+$0049: $E001:  S: $01 -> r16 ($01->r16)
+$004A: $9300:  S: r16 -> [$006E] (r16->TIMSK0)
+$004B: $006E:  
+               F: 1 -> TOIE0  ...
+$004C: $9100:     [$006E] -> r16
+$004D: $006E:  
+$004E: $6001:     r16 ! $01
+$004F: $9300:     r16 -> [$006E]
+$0050: $006E:  
+-----          L: 
+$0051: $9508:  F: RET (ret)
+-----          V: _PWM_All_Levels_Off
+               F: Z ->  ...
+$0052: $93EF:     r30 ->
+$0053: $93FF:     r31 ->
+$0054: $E000:  F: $00 -> r16 (0 -> r16)
+$0055: $E018:  F: $08 -> r17 (PWM_LINE_NUMB -> r17)
+               F: @PWM_Level -> Z  ...
+$0056: $E0E0:     $00 -> r30
+$0057: $E0F1:     $01 -> r31
+-----          L: 
+$0058: $9301:  F: r16 -> [Z++] (r16 -> [Z++])
+               C: if (r17 --) then goto $0058 ...
+$0059: $951A:     r17 --
+$005A: $F7E9:     if (Z=0) then goto $58
+               F: -> Z  ...
+$005B: $91FF:     -> r31
+$005C: $91EF:     -> r30
+$005D: $9508:  F: RET (ret)
+-----          V: Timer_0_Overflow
+$005E: $930F:  F: r16 -> (r16 ->)
+$005F: $931F:  F: r17 -> (r17 ->)
+               F: SREG ->  ...
+$0060: $B70F:     p$3F -> r16
+$0061: $930F:     r16 ->
+-----          L: 
+-----          L: 
+$0062: $9110:  F: [$0108] -> r17 (PWM_Pos -> r17)
+$0063: $0108:  
+$0064: $9513:  F: r17 ++ (r17 ++)
+$0065: $9310:  F: r17 -> [$0108] (r17 -> PWM_Pos)
+$0066: $0108:  
+               C: if (r17 = 255) then goto $00A6 ...
+$0067: $3F1F:     r17 = $FF
+$0068: $F1E9:     if (Z=1) then goto $A6
+-----          L: 
+-----          L: 
+-----          L: 
+$0069: $9100:  F: [$0100] -> r16 (PWM_Level[0] -> r16)
+$006A: $0100:  
+$006B: $1710:  F: r17 = r16 (r17 = r16)
+$006C: $F008:  C: if (C=1) then goto $6E (C = 0)
+$006D: $9829:  F: 0 -> p$05.1 (0 -> Port_PWM_0)
+$006E: $F408:  C: if (C=0) then goto $70 (C = 1)
+$006F: $9A29:  F: 1 -> p$05.1 (1 -> Port_PWM_0)
+-----          L: 
+$0070: $9100:  F: [$0101] -> r16 (PWM_Level[1] -> r16)
+$0071: $0101:  
+$0072: $1710:  F: r17 = r16 (r17 = r16)
+$0073: $F008:  C: if (C=1) then goto $75 (C = 0)
+$0074: $982B:  F: 0 -> p$05.3 (0 -> Port_PWM_1)
+$0075: $F408:  C: if (C=0) then goto $77 (C = 1)
+$0076: $9A2B:  F: 1 -> p$05.3 (1 -> Port_PWM_1)
+-----          L: 
+$0077: $9100:  F: [$0102] -> r16 (PWM_Level[2] -> r16)
+$0078: $0102:  
+$0079: $1710:  F: r17 = r16 (r17 = r16)
+$007A: $F008:  C: if (C=1) then goto $7C (C = 0)
+$007B: $982D:  F: 0 -> p$05.5 (0 -> Port_PWM_2)
+$007C: $F408:  C: if (C=0) then goto $7E (C = 1)
+$007D: $9A2D:  F: 1 -> p$05.5 (1 -> Port_PWM_2)
+-----          L: 
+$007E: $9100:  F: [$0103] -> r16 (PWM_Level[3] -> r16)
+$007F: $0103:  
+$0080: $1710:  F: r17 = r16 (r17 = r16)
+$0081: $F008:  C: if (C=1) then goto $83 (C = 0)
+$0082: $9841:  F: 0 -> p$08.1 (0 -> Port_PWM_3)
+$0083: $F408:  C: if (C=0) then goto $85 (C = 1)
+$0084: $9A41:  F: 1 -> p$08.1 (1 -> Port_PWM_3)
+-----          L: 
+$0085: $9100:  F: [$0104] -> r16 (PWM_Level[4] -> r16)
+$0086: $0104:  
+$0087: $1710:  F: r17 = r16 (r17 = r16)
+$0088: $F008:  C: if (C=1) then goto $8A (C = 0)
+$0089: $982A:  F: 0 -> p$05.2 (0 -> Port_PWM_4)
+$008A: $F408:  C: if (C=0) then goto $8C (C = 1)
+$008B: $9A2A:  F: 1 -> p$05.2 (1 -> Port_PWM_4)
+-----          L: 
+$008C: $9100:  F: [$0105] -> r16 (PWM_Level[5] -> r16)
+$008D: $0105:  
+$008E: $1710:  F: r17 = r16 (r17 = r16)
+$008F: $F008:  C: if (C=1) then goto $91 (C = 0)
+$0090: $982C:  F: 0 -> p$05.4 (0 -> Port_PWM_5)
+$0091: $F408:  C: if (C=0) then goto $93 (C = 1)
+$0092: $9A2C:  F: 1 -> p$05.4 (1 -> Port_PWM_5)
+-----          L: 
+$0093: $9100:  F: [$0106] -> r16 (PWM_Level[6] -> r16)
+$0094: $0106:  
+$0095: $1710:  F: r17 = r16 (r17 = r16)
+$0096: $F008:  C: if (C=1) then goto $98 (C = 0)
+$0097: $9840:  F: 0 -> p$08.0 (0 -> Port_PWM_6)
+$0098: $F408:  C: if (C=0) then goto $9A (C = 1)
+$0099: $9A40:  F: 1 -> p$08.0 (1 -> Port_PWM_6)
+-----          L: 
+$009A: $9100:  F: [$0107] -> r16 (PWM_Level[7] -> r16)
+$009B: $0107:  
+$009C: $1710:  F: r17 = r16 (r17 = r16)
+$009D: $F008:  C: if (C=1) then goto $9F (C = 0)
+$009E: $9842:  F: 0 -> p$08.2 (0 -> Port_PWM_7)
+$009F: $F408:  C: if (C=0) then goto $A1 (C = 1)
+$00A0: $9A42:  F: 1 -> p$08.2 (1 -> Port_PWM_7)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+               F: -> SREG  ...
+$00A1: $910F:     -> r16
+$00A2: $BF0F:     r16 -> p$3F
+$00A3: $911F:  F: -> r17 (-> r17)
+$00A4: $910F:  F: -> r16 (-> r16)
+$00A5: $9518:  F: RETI (reti)
+-----          V: 
+$00A6: $DF8F:  F: rcall $36 (_PWM_Event_Cyclic_action)
+-----          L: 
+$00A7: $CFF9:  J: goto $A1 (RJMP)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\RND.alg    ***********
+-----          V: _RND_Next
+$00A8: $9100:  F: [$010B] -> r16 (RND -> r16)
+$00A9: $010B:  
+$00AA: $0F00:  F: << r16 (<<r16)
+$00AB: $F02B:  C: if (V=1) then goto $B1 (V=1)
+$00AC: $F00D:  C: if (H=1) then goto $AE (H=1)
+-----          L: 
+$00AD: $9503:  F: r16 ++ (r16++)
+-----          L: 
+$00AE: $9300:  F: r16 -> [$010B] (r16 -> RND)
+$00AF: $010B:  
+$00B0: $9508:  F: RET (ret)
+-----          V: 
+$00B1: $F3DD:  C: if (H=1) then goto $AD (H=1)
+$00B2: $CFFB:  J: goto $AE (RJMP)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\EX_Key.alg    ***********
+-----          V: _EX_Key_Init
+$00B3: $9A28:  F: 1 -> p$05.0 (1 -> Port_EX_Key_0)
+-----          L: 
+$00B4: $9A5F:  F: 1 -> p$0B.7 (1 -> Port_EX_Key_1)
+-----          L: 
+$00B5: $9A5E:  F: 1 -> p$0B.6 (1 -> Port_EX_Key_2)
+-----          L: 
+$00B6: $9A5D:  F: 1 -> p$0B.5 (1 -> Port_EX_Key_3)
+-----          L: 
+$00B7: $9A2F:  F: 1 -> p$05.7 (1 -> Port_EX_Key_4)
+-----          L: 
+$00B8: $9A2E:  F: 1 -> p$05.6 (1 -> Port_EX_Key_5)
+-----          L: 
+$00B9: $9A5C:  F: 1 -> p$0B.4 (1 -> Port_EX_Key_6)
+-----          L: 
+$00BA: $9A5B:  F: 1 -> p$0B.3 (1 -> Port_EX_Key_7)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$00BB: $9508:  F: RET (ret)
+-----          V: _EX_Key_Cyclic_Call
+$00BC: $9100:  F: [$010C] -> r16 (EX_Key_Dreb_Cnt[0] -> r16)
+$00BD: $010C:  
+$00BE: $9918:  C: if (p$03.0=0 then SKIP (Pin_EX_Key_0 = 1)
+$00BF: $C011:  C: goto $D1 (RJMP) (Pin_EX_Key_0 = 1)
+               C: if (r16 = EX_KEY_DREB_ITER) then goto $00D9 ...
+$00C0: $3004:     r16 = $04
+$00C1: $F0B9:     if (Z=1) then goto $D9
+$00C2: $9503:  F: r16 ++ (r16 ++)
+$00C3: $9300:  F: r16 -> [$010C] (r16 -> EX_Key_Dreb_Cnt[0])
+$00C4: $010C:  
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $00D9 ...
+$00C5: $3004:     r16 = $04
+$00C6: $F491:     if (Z=0) then goto $D9
+-----          L: 
+$00C7: $D182:  F: rcall $24A (_r8_getAddress)
+               C: if (r17 = #b00000111) then goto $00D0 ...
+$00C8: $3017:     r17 = $07
+$00C9: $F031:     if (Z=1) then goto $D0
+$00CA: $9100:  F: [$0100] -> r16 ([@PWM_Level + RELEY_0] -> r16)
+$00CB: $0100:  
+$00CC: $9500:  F: | r16 (|r16)
+$00CD: $9300:  F: r16 -> [$0100] (r16 -> [@PWM_Level + RELEY_0])
+$00CE: $0100:  
+$00CF: $6051:  F: r21 ! $01 (1 -> r8_status.0)
+-----          L: 
+-----          L: 
+$00D0: $C008:  J: goto $D9 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (r16 = 0) then goto $00D9 ...
+$00D1: $3000:     r16 = $00
+$00D2: $F031:     if (Z=1) then goto $D9
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $00D5 ...
+$00D3: $3004:     r16 = $04
+$00D4: $F401:     if (Z=0) then goto $D5
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 0 -> EX_Key_Dreb_Cnt[0]  ...
+$00D5: $E000:     $00 -> r16
+$00D6: $9300:     r16 -> [$010C]
+$00D7: $010C:  
+$00D8: $C000:  J: goto $D9 (RJMP)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: End_EX_Test
+-----          L: 
+$00D9: $9100:  F: [$010D] -> r16 (EX_Key_Dreb_Cnt[1] -> r16)
+$00DA: $010D:  
+$00DB: $994F:  C: if (p$09.7=0 then SKIP (Pin_EX_Key_1 = 1)
+$00DC: $C011:  C: goto $EE (RJMP) (Pin_EX_Key_1 = 1)
+               C: if (r16 = EX_KEY_DREB_ITER) then goto $00F6 ...
+$00DD: $3004:     r16 = $04
+$00DE: $F0B9:     if (Z=1) then goto $F6
+$00DF: $9503:  F: r16 ++ (r16 ++)
+$00E0: $9300:  F: r16 -> [$010D] (r16 -> EX_Key_Dreb_Cnt[1])
+$00E1: $010D:  
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $00F6 ...
+$00E2: $3004:     r16 = $04
+$00E3: $F491:     if (Z=0) then goto $F6
+-----          L: 
+$00E4: $D165:  F: rcall $24A (_r8_getAddress)
+               C: if (r17 = #b00000111) then goto $00ED ...
+$00E5: $3017:     r17 = $07
+$00E6: $F031:     if (Z=1) then goto $ED
+$00E7: $9100:  F: [$0101] -> r16 ([@PWM_Level + RELEY_1] -> r16)
+$00E8: $0101:  
+$00E9: $9500:  F: | r16 (|r16)
+$00EA: $9300:  F: r16 -> [$0101] (r16 -> [@PWM_Level + RELEY_1])
+$00EB: $0101:  
+$00EC: $6052:  F: r21 ! $02 (1 -> r8_status.1)
+-----          L: 
+-----          L: 
+$00ED: $C008:  J: goto $F6 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (r16 = 0) then goto $00F6 ...
+$00EE: $3000:     r16 = $00
+$00EF: $F031:     if (Z=1) then goto $F6
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $00F2 ...
+$00F0: $3004:     r16 = $04
+$00F1: $F401:     if (Z=0) then goto $F2
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 0 -> EX_Key_Dreb_Cnt[1]  ...
+$00F2: $E000:     $00 -> r16
+$00F3: $9300:     r16 -> [$010D]
+$00F4: $010D:  
+$00F5: $C000:  J: goto $F6 (RJMP)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: End_EX_Test
+-----          L: 
+$00F6: $9100:  F: [$010E] -> r16 (EX_Key_Dreb_Cnt[2] -> r16)
+$00F7: $010E:  
+$00F8: $994E:  C: if (p$09.6=0 then SKIP (Pin_EX_Key_2 = 1)
+$00F9: $C011:  C: goto $10B (RJMP) (Pin_EX_Key_2 = 1)
+               C: if (r16 = EX_KEY_DREB_ITER) then goto $0113 ...
+$00FA: $3004:     r16 = $04
+$00FB: $F0B9:     if (Z=1) then goto $113
+$00FC: $9503:  F: r16 ++ (r16 ++)
+$00FD: $9300:  F: r16 -> [$010E] (r16 -> EX_Key_Dreb_Cnt[2])
+$00FE: $010E:  
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $0113 ...
+$00FF: $3004:     r16 = $04
+$0100: $F491:     if (Z=0) then goto $113
+-----          L: 
+$0101: $D148:  F: rcall $24A (_r8_getAddress)
+               C: if (r17 = #b00000111) then goto $010A ...
+$0102: $3017:     r17 = $07
+$0103: $F031:     if (Z=1) then goto $10A
+$0104: $9100:  F: [$0102] -> r16 ([@PWM_Level + RELEY_2] -> r16)
+$0105: $0102:  
+$0106: $9500:  F: | r16 (|r16)
+$0107: $9300:  F: r16 -> [$0102] (r16 -> [@PWM_Level + RELEY_2])
+$0108: $0102:  
+$0109: $6054:  F: r21 ! $04 (1 -> r8_status.2)
+-----          L: 
+-----          L: 
+$010A: $C008:  J: goto $113 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (r16 = 0) then goto $0113 ...
+$010B: $3000:     r16 = $00
+$010C: $F031:     if (Z=1) then goto $113
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $010F ...
+$010D: $3004:     r16 = $04
+$010E: $F401:     if (Z=0) then goto $10F
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 0 -> EX_Key_Dreb_Cnt[2]  ...
+$010F: $E000:     $00 -> r16
+$0110: $9300:     r16 -> [$010E]
+$0111: $010E:  
+$0112: $C000:  J: goto $113 (RJMP)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: End_EX_Test
+-----          L: 
+$0113: $9100:  F: [$010F] -> r16 (EX_Key_Dreb_Cnt[3] -> r16)
+$0114: $010F:  
+$0115: $994D:  C: if (p$09.5=0 then SKIP (Pin_EX_Key_3 = 1)
+$0116: $C011:  C: goto $128 (RJMP) (Pin_EX_Key_3 = 1)
+               C: if (r16 = EX_KEY_DREB_ITER) then goto $0130 ...
+$0117: $3004:     r16 = $04
+$0118: $F0B9:     if (Z=1) then goto $130
+$0119: $9503:  F: r16 ++ (r16 ++)
+$011A: $9300:  F: r16 -> [$010F] (r16 -> EX_Key_Dreb_Cnt[3])
+$011B: $010F:  
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $0130 ...
+$011C: $3004:     r16 = $04
+$011D: $F491:     if (Z=0) then goto $130
+-----          L: 
+$011E: $D12B:  F: rcall $24A (_r8_getAddress)
+               C: if (r17 = #b00000111) then goto $0127 ...
+$011F: $3017:     r17 = $07
+$0120: $F031:     if (Z=1) then goto $127
+$0121: $9100:  F: [$0103] -> r16 ([@PWM_Level + RELEY_3] -> r16)
+$0122: $0103:  
+$0123: $9500:  F: | r16 (|r16)
+$0124: $9300:  F: r16 -> [$0103] (r16 -> [@PWM_Level + RELEY_3])
+$0125: $0103:  
+$0126: $6058:  F: r21 ! $08 (1 -> r8_status.3)
+-----          L: 
+-----          L: 
+$0127: $C008:  J: goto $130 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (r16 = 0) then goto $0130 ...
+$0128: $3000:     r16 = $00
+$0129: $F031:     if (Z=1) then goto $130
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $012C ...
+$012A: $3004:     r16 = $04
+$012B: $F401:     if (Z=0) then goto $12C
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 0 -> EX_Key_Dreb_Cnt[3]  ...
+$012C: $E000:     $00 -> r16
+$012D: $9300:     r16 -> [$010F]
+$012E: $010F:  
+$012F: $C000:  J: goto $130 (RJMP)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: End_EX_Test
+-----          L: 
+$0130: $9100:  F: [$0110] -> r16 (EX_Key_Dreb_Cnt[4] -> r16)
+$0131: $0110:  
+$0132: $991F:  C: if (p$03.7=0 then SKIP (Pin_EX_Key_4 = 1)
+$0133: $C011:  C: goto $145 (RJMP) (Pin_EX_Key_4 = 1)
+               C: if (r16 = EX_KEY_DREB_ITER) then goto $014D ...
+$0134: $3004:     r16 = $04
+$0135: $F0B9:     if (Z=1) then goto $14D
+$0136: $9503:  F: r16 ++ (r16 ++)
+$0137: $9300:  F: r16 -> [$0110] (r16 -> EX_Key_Dreb_Cnt[4])
+$0138: $0110:  
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $014D ...
+$0139: $3004:     r16 = $04
+$013A: $F491:     if (Z=0) then goto $14D
+-----          L: 
+$013B: $D10E:  F: rcall $24A (_r8_getAddress)
+               C: if (r17 = #b00000111) then goto $0144 ...
+$013C: $3017:     r17 = $07
+$013D: $F031:     if (Z=1) then goto $144
+$013E: $9100:  F: [$0104] -> r16 ([@PWM_Level + RELEY_4] -> r16)
+$013F: $0104:  
+$0140: $9500:  F: | r16 (|r16)
+$0141: $9300:  F: r16 -> [$0104] (r16 -> [@PWM_Level + RELEY_4])
+$0142: $0104:  
+$0143: $6150:  F: r21 ! $10 (1 -> r8_status.4)
+-----          L: 
+-----          L: 
+$0144: $C008:  J: goto $14D (RJMP)
+-----          L: 
+-----          L: 
+               C: if (r16 = 0) then goto $014D ...
+$0145: $3000:     r16 = $00
+$0146: $F031:     if (Z=1) then goto $14D
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $0149 ...
+$0147: $3004:     r16 = $04
+$0148: $F401:     if (Z=0) then goto $149
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 0 -> EX_Key_Dreb_Cnt[4]  ...
+$0149: $E000:     $00 -> r16
+$014A: $9300:     r16 -> [$0110]
+$014B: $0110:  
+$014C: $C000:  J: goto $14D (RJMP)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: End_EX_Test
+-----          L: 
+$014D: $9100:  F: [$0111] -> r16 (EX_Key_Dreb_Cnt[5] -> r16)
+$014E: $0111:  
+$014F: $991E:  C: if (p$03.6=0 then SKIP (Pin_EX_Key_5 = 1)
+$0150: $C011:  C: goto $162 (RJMP) (Pin_EX_Key_5 = 1)
+               C: if (r16 = EX_KEY_DREB_ITER) then goto $016A ...
+$0151: $3004:     r16 = $04
+$0152: $F0B9:     if (Z=1) then goto $16A
+$0153: $9503:  F: r16 ++ (r16 ++)
+$0154: $9300:  F: r16 -> [$0111] (r16 -> EX_Key_Dreb_Cnt[5])
+$0155: $0111:  
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $016A ...
+$0156: $3004:     r16 = $04
+$0157: $F491:     if (Z=0) then goto $16A
+-----          L: 
+$0158: $D0F1:  F: rcall $24A (_r8_getAddress)
+               C: if (r17 = #b00000111) then goto $0161 ...
+$0159: $3017:     r17 = $07
+$015A: $F031:     if (Z=1) then goto $161
+$015B: $9100:  F: [$0105] -> r16 ([@PWM_Level + RELEY_5] -> r16)
+$015C: $0105:  
+$015D: $9500:  F: | r16 (|r16)
+$015E: $9300:  F: r16 -> [$0105] (r16 -> [@PWM_Level + RELEY_5])
+$015F: $0105:  
+$0160: $6250:  F: r21 ! $20 (1 -> r8_status.5)
+-----          L: 
+-----          L: 
+$0161: $C008:  J: goto $16A (RJMP)
+-----          L: 
+-----          L: 
+               C: if (r16 = 0) then goto $016A ...
+$0162: $3000:     r16 = $00
+$0163: $F031:     if (Z=1) then goto $16A
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $0166 ...
+$0164: $3004:     r16 = $04
+$0165: $F401:     if (Z=0) then goto $166
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 0 -> EX_Key_Dreb_Cnt[5]  ...
+$0166: $E000:     $00 -> r16
+$0167: $9300:     r16 -> [$0111]
+$0168: $0111:  
+$0169: $C000:  J: goto $16A (RJMP)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: End_EX_Test
+-----          L: 
+$016A: $9100:  F: [$0112] -> r16 (EX_Key_Dreb_Cnt[6] -> r16)
+$016B: $0112:  
+$016C: $994C:  C: if (p$09.4=0 then SKIP (Pin_EX_Key_6 = 1)
+$016D: $C011:  C: goto $17F (RJMP) (Pin_EX_Key_6 = 1)
+               C: if (r16 = EX_KEY_DREB_ITER) then goto $0187 ...
+$016E: $3004:     r16 = $04
+$016F: $F0B9:     if (Z=1) then goto $187
+$0170: $9503:  F: r16 ++ (r16 ++)
+$0171: $9300:  F: r16 -> [$0112] (r16 -> EX_Key_Dreb_Cnt[6])
+$0172: $0112:  
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $0187 ...
+$0173: $3004:     r16 = $04
+$0174: $F491:     if (Z=0) then goto $187
+-----          L: 
+$0175: $D0D4:  F: rcall $24A (_r8_getAddress)
+               C: if (r17 = #b00000111) then goto $017E ...
+$0176: $3017:     r17 = $07
+$0177: $F031:     if (Z=1) then goto $17E
+$0178: $9100:  F: [$0106] -> r16 ([@PWM_Level + RELEY_6] -> r16)
+$0179: $0106:  
+$017A: $9500:  F: | r16 (|r16)
+$017B: $9300:  F: r16 -> [$0106] (r16 -> [@PWM_Level + RELEY_6])
+$017C: $0106:  
+$017D: $6450:  F: r21 ! $40 (1 -> r8_status.6)
+-----          L: 
+-----          L: 
+$017E: $C008:  J: goto $187 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (r16 = 0) then goto $0187 ...
+$017F: $3000:     r16 = $00
+$0180: $F031:     if (Z=1) then goto $187
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $0183 ...
+$0181: $3004:     r16 = $04
+$0182: $F401:     if (Z=0) then goto $183
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 0 -> EX_Key_Dreb_Cnt[6]  ...
+$0183: $E000:     $00 -> r16
+$0184: $9300:     r16 -> [$0112]
+$0185: $0112:  
+$0186: $C000:  J: goto $187 (RJMP)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: End_EX_Test
+-----          L: 
+$0187: $9100:  F: [$0113] -> r16 (EX_Key_Dreb_Cnt[7] -> r16)
+$0188: $0113:  
+$0189: $994B:  C: if (p$09.3=0 then SKIP (Pin_EX_Key_7 = 1)
+$018A: $C011:  C: goto $19C (RJMP) (Pin_EX_Key_7 = 1)
+               C: if (r16 = EX_KEY_DREB_ITER) then goto $01A4 ...
+$018B: $3004:     r16 = $04
+$018C: $F0B9:     if (Z=1) then goto $1A4
+$018D: $9503:  F: r16 ++ (r16 ++)
+$018E: $9300:  F: r16 -> [$0113] (r16 -> EX_Key_Dreb_Cnt[7])
+$018F: $0113:  
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $01A4 ...
+$0190: $3004:     r16 = $04
+$0191: $F491:     if (Z=0) then goto $1A4
+-----          L: 
+$0192: $D0B7:  F: rcall $24A (_r8_getAddress)
+               C: if (r17 = #b00000111) then goto $019B ...
+$0193: $3017:     r17 = $07
+$0194: $F031:     if (Z=1) then goto $19B
+$0195: $9100:  F: [$0107] -> r16 ([@PWM_Level + RELEY_7] -> r16)
+$0196: $0107:  
+$0197: $9500:  F: | r16 (|r16)
+$0198: $9300:  F: r16 -> [$0107] (r16 -> [@PWM_Level + RELEY_7])
+$0199: $0107:  
+$019A: $6850:  F: r21 ! $80 (1 -> r8_status.7)
+-----          L: 
+-----          L: 
+$019B: $C008:  J: goto $1A4 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (r16 = 0) then goto $01A4 ...
+$019C: $3000:     r16 = $00
+$019D: $F031:     if (Z=1) then goto $1A4
+               C: if (r16 -= EX_KEY_DREB_ITER) then goto $01A0 ...
+$019E: $3004:     r16 = $04
+$019F: $F401:     if (Z=0) then goto $1A0
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 0 -> EX_Key_Dreb_Cnt[7]  ...
+$01A0: $E000:     $00 -> r16
+$01A1: $9300:     r16 -> [$0113]
+$01A2: $0113:  
+$01A3: $C000:  J: goto $1A4 (RJMP)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: End_EX_Test
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$01A4: $9508:  F: RET (ret)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\STimer.alg    ***********
+-----          V: _STimer_Event_End_1
+-----          L: 
+$01A5: $9508:  F: RET (RET)
+-----          V: _STimer_Event_End_0
+-----          L: 
+$01A6: $D073:  F: rcall $21A (_r8_setAddress)
+-----          L: 
+$01A7: $D0A2:  F: rcall $24A (_r8_getAddress)
+               C: if (r17 -= #b00000111) then goto $01BB ...
+$01A8: $3017:     r17 = $07
+$01A9: $F489:     if (Z=0) then goto $1BB
+               F: LOW -> [@PWM_Level + RELEY_0]  ...
+$01AA: $E000:     $00 -> r16
+$01AB: $9300:     r16 -> [$0100]
+$01AC: $0100:  
+               F: LOW -> [@PWM_Level + RELEY_1]  ...
+$01AD: $9300:     r16 -> [$0101]
+$01AE: $0101:  
+               F: LOW -> [@PWM_Level + RELEY_2]  ...
+$01AF: $9300:     r16 -> [$0102]
+$01B0: $0102:  
+               F: LOW -> [@PWM_Level + RELEY_3]  ...
+$01B1: $9300:     r16 -> [$0103]
+$01B2: $0103:  
+               F: LOW -> [@PWM_Level + RELEY_4]  ...
+$01B3: $9300:     r16 -> [$0104]
+$01B4: $0104:  
+               F: LOW -> [@PWM_Level + RELEY_5]  ...
+$01B5: $9300:     r16 -> [$0105]
+$01B6: $0105:  
+               F: LOW -> [@PWM_Level + RELEY_6]  ...
+$01B7: $9300:     r16 -> [$0106]
+$01B8: $0106:  
+               F: LOW -> [@PWM_Level + RELEY_7]  ...
+$01B9: $9300:     r16 -> [$0107]
+$01BA: $0107:  
+-----          L: 
+$01BB: $9508:  F: RET (RET)
+-----          V: _STimer_Event_End_2
+-----          L: 
+$01BC: $9508:  F: RET (ret)
+-----          V: _STimer_Clear_All
+               F: Z ->  ...
+$01BD: $93EF:     r30 ->
+$01BE: $93FF:     r31 ->
+               F: @STimer_Counter -> Z  ...
+$01BF: $E1E5:     $15 -> r30
+$01C0: $E0F1:     $01 -> r31
+$01C1: $E021:  F: $01 -> r18 (STIMER_NUMB -> Temp)
+$01C2: $E000:  F: $00 -> r16 (0 -> r16)
+-----          L: 
+$01C3: $9301:  F: r16 -> [Z++] (r16 -> [Z++])
+               C: if (Temp --) then goto $01C3 ...
+$01C4: $952A:     r18 --
+$01C5: $F7E9:     if (Z=0) then goto $1C3
+               F: -> Z  ...
+$01C6: $91FF:     -> r31
+$01C7: $91EF:     -> r30
+$01C8: $9508:  F: RET (ret)
+-----          V: _STimer_Init
+-----          L: 
+$01C9: $9508:  F: RET (ret)
+-----          V: _STimer_Cyclic_Call
+$01CA: $9100:  F: [$0115] -> r16 (STimer_Counter[0]  -> r16)
+$01CB: $0115:  
+$01CC: $5001:  F: r16 - $01 (r16 - 1)
+$01CD: $F020:  C: if (C=1) then goto $1D2 (C = 1)
+$01CE: $9300:  F: r16 -> [$0115] (r16 -> STimer_Counter[0])
+$01CF: $0115:  
+$01D0: $F409:  C: if (Z=0) then goto $1D2 (-=)
+$01D1: $DFD4:  F: rcall $1A6 (_STimer_Event_End_0)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$01D2: $9508:  F: RET (ret)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\r8.alg    ***********
+-----          V: _r8_init
+$01D3: $9A5A:  F: 1 -> p$0B.2 (1 -> Port_addr_0)
+$01D4: $9A59:  F: 1 -> p$0B.1 (1 -> Port_addr_1)
+$01D5: $9A58:  F: 1 -> p$0B.0 (1 -> Port_addr_2)
+-----          L: 
+$01D6: $E004:  S: $04 -> r16 ($04->r16)
+$01D7: $9300:  S: r16 -> [$0068] (r16->PCICR)
+$01D8: $0068:  
+$01D9: $E007:  S: $07 -> r16 ($07->r16)
+$01DA: $9300:  S: r16 -> [$006D] (r16->PCMSK2)
+$01DB: $006D:  
+-----          L: 
+$01DC: $9508:  F: RET (RET)
+-----          V: _r8_parseData
+$01DD: $FD07:  C: if (r16.7=0 then SKIP (r16.7 = 1)
+$01DE: $C012:  C: goto $1F1 (RJMP) (r16.7 = 1)
+-----          L: 
+$01DF: $FB03:  F: r16.3 -> T (r16.3 -> T)
+$01E0: $7007:  F: r16 & $07 (r16 & #b00000111)
+               F: X ->  ...
+$01E1: $93AF:     r26 ->
+$01E2: $93BF:     r27 ->
+               F: @PWM_Level -> X  ...
+$01E3: $E0A0:     $00 -> r26
+$01E4: $E0B1:     $01 -> r27
+               F: X + r16  ...
+$01E5: $0FA0:     r26 + r16
+$01E6: $E010:     $00 -> r17
+$01E7: $1FB1:     r27 + r17 +
+$01E8: $F01E:  C: if (T=1) then goto $1EC (T=1)
+               F: LOW->[X]  ...
+$01E9: $E000:     $00 -> r16
+$01EA: $930C:     r16 -> [X]
+$01EB: $C002:  J: goto $1EE (RJMP)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\main.alp    ***********
+-----          L: 
+               F: HIGH->[X]  ...
+$01EC: $EF0F:     $FF -> r16
+$01ED: $930C:     r16 -> [X]
+-----          L: 
+               F: -> X  ...
+$01EE: $91BF:     -> r27
+$01EF: $91AF:     -> r26
+$01F0: $9508:  F: RET (RET)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\r8.alg    ***********
+-----          V: 
+               C: if (r16 -= 0+128) then goto $01F4 ...
+$01F1: $3800:     r16 = $80
+$01F2: $F409:     if (Z=0) then goto $1F4
+$01F3: $9508:  F: RET (RET)
+-----          L: 
+               C: if (r16 -= 1+128) then goto $0208 ...
+$01F4: $3801:     r16 = $81
+$01F5: $F491:     if (Z=0) then goto $208
+               F: LOW -> [@PWM_Level + RELEY_0]  ...
+$01F6: $E000:     $00 -> r16
+$01F7: $9300:     r16 -> [$0100]
+$01F8: $0100:  
+               F: LOW -> [@PWM_Level + RELEY_1]  ...
+$01F9: $9300:     r16 -> [$0101]
+$01FA: $0101:  
+               F: LOW -> [@PWM_Level + RELEY_2]  ...
+$01FB: $9300:     r16 -> [$0102]
+$01FC: $0102:  
+               F: LOW -> [@PWM_Level + RELEY_3]  ...
+$01FD: $9300:     r16 -> [$0103]
+$01FE: $0103:  
+               F: LOW -> [@PWM_Level + RELEY_4]  ...
+$01FF: $9300:     r16 -> [$0104]
+$0200: $0104:  
+               F: LOW -> [@PWM_Level + RELEY_5]  ...
+$0201: $9300:     r16 -> [$0105]
+$0202: $0105:  
+               F: LOW -> [@PWM_Level + RELEY_6]  ...
+$0203: $9300:     r16 -> [$0106]
+$0204: $0106:  
+               F: LOW -> [@PWM_Level + RELEY_7]  ...
+$0205: $9300:     r16 -> [$0107]
+$0206: $0107:  
+$0207: $9508:  F: RET (RET)
+-----          L: 
+               C: if (r16 -= 2+128) then goto $020B ...
+$0208: $3802:     r16 = $82
+$0209: $F409:     if (Z=0) then goto $20B
+$020A: $9508:  F: RET (RET)
+-----          L: 
+$020B: $9508:  F: RET (RET)
+-----          V: Pin_Change_2
+$020C: $930F:  F: r16 -> (r16 ->)
+$020D: $931F:  F: r17 -> (r17 ->)
+               F: SREG ->  ...
+$020E: $B70F:     p$3F -> r16
+$020F: $930F:     r16 ->
+-----          L: 
+               F: 300/STIMER_PERIOD_CALL -> [@STimer_Counter + ADDRESS_CHANGE]  ...
+$0210: $E10E:     $1E -> r16
+$0211: $9300:     r16 -> [$0115]
+$0212: $0115:  
+               F: 300/STIMER_PERIOD_CALL -> [@STimer_Counter_Stop + ADDRESS_CHANGE]  ...
+$0213: $9300:     r16 -> [$0116]
+$0214: $0116:  
+-----          L: 
+               F: -> SREG  ...
+$0215: $910F:     -> r16
+$0216: $BF0F:     r16 -> p$3F
+$0217: $911F:  F: -> r17 (-> r17)
+$0218: $910F:  F: -> r16 (-> r16)
+$0219: $9518:  F: RETI (RETI)
+-----          V: _r8_setAddress
+$021A: $EB1F:  F: $BF -> r17 (#b10111111 -> r17)
+               F: Pin_addr_0 -> r17.1  ...
+$021B: $B109:     p$09 -> r16
+$021C: $FB02:     r16.2 -> T
+$021D: $F911:     T -> r17.1
+               F: Pin_addr_1 -> r17.2  ...
+$021E: $B109:     p$09 -> r16
+$021F: $FB01:     r16.1 -> T
+$0220: $F912:     T -> r17.2
+               F: Pin_addr_2 -> r17.3  ...
+$0221: $B109:     p$09 -> r16
+$0222: $FB00:     r16.0 -> T
+$0223: $F913:     T -> r17.3
+$0224: $9510:  F: | r17 (|r17)
+               C: if (r17 = #b01000000) then goto $0228 ...
+$0225: $3410:     r17 = $40
+$0226: $F409:     if (Z=0) then goto $228
+$0227: $E010:  F: $00 -> r17 (0 -> r17)
+$0228: $9310:  F: r17 -> [$00BA] (r17 -> TWAR)
+$0229: $00BA:  
+$022A: $9508:  F: RET (RET)
+-----          V: _r8_getData_
+$022B: $930F:  F: r16 -> (r16 ->)
+$022C: $EF1F:  F: $FF -> r17 (#b11111111 -> r17)
+               F: Pin_addr_0 -> r17.4  ...
+$022D: $B109:     p$09 -> r16
+$022E: $FB02:     r16.2 -> T
+$022F: $F914:     T -> r17.4
+               F: Pin_addr_1 -> r17.5  ...
+$0230: $B109:     p$09 -> r16
+$0231: $FB01:     r16.1 -> T
+$0232: $F915:     T -> r17.5
+               F: Pin_addr_2 -> r17.6  ...
+$0233: $B109:     p$09 -> r16
+$0234: $FB00:     r16.0 -> T
+$0235: $F916:     T -> r17.6
+$0236: $9510:  F: | r17 (|r17)
+$0237: $910F:  F: -> r16 (-> r16)
+$0238: $2B10:  F: r17 ! r16 (r17 ! r16)
+$0239: $931F:  F: r17 -> (r17 ->)
+               F: X ->  ...
+$023A: $93AF:     r26 ->
+$023B: $93BF:     r27 ->
+               F: @PWM_Level -> X  ...
+$023C: $E0A0:     $00 -> r26
+$023D: $E0B1:     $01 -> r27
+               F: X + r16  ...
+$023E: $0FA0:     r26 + r16
+$023F: $E010:     $00 -> r17
+$0240: $1FB1:     r27 + r17 +
+$0241: $910C:  F: [X] -> r16 ([X] -> r16)
+               F: -> X  ...
+$0242: $91BF:     -> r27
+$0243: $91AF:     -> r26
+$0244: $911F:  F: -> r17 (-> r17)
+               C: if (r16 -= 0) then goto $0248 ...
+$0245: $3000:     r16 = $00
+$0246: $F009:     if (Z=1) then goto $248
+$0247: $6018:  F: r17 ! $08 (1 -> r17.3)
+$0248: $2F01:  F: r17 -> r16 (r17 -> r16)
+$0249: $9508:  F: RET (RET)
+-----          V: _r8_getAddress
+$024A: $E010:  F: $00 -> r17 (0 -> r17)
+               F: Pin_addr_0 -> r17.0  ...
+$024B: $B109:     p$09 -> r16
+$024C: $FB02:     r16.2 -> T
+$024D: $F910:     T -> r17.0
+               F: Pin_addr_1 -> r17.1  ...
+$024E: $B109:     p$09 -> r16
+$024F: $FB01:     r16.1 -> T
+$0250: $F911:     T -> r17.1
+               F: Pin_addr_2 -> r17.2  ...
+$0251: $B109:     p$09 -> r16
+$0252: $FB00:     r16.0 -> T
+$0253: $F912:     T -> r17.2
+$0254: $9508:  F: RET (RET)
+-----          V: _r8_sendToBase_
+-----          L: 
+-----          L: 
+$0255: $D050:  F: rcall $2A6 (_iic_start)
+-----          L: 
+$0256: $FD30:  C: if (r19.0=0 then SKIP (f_arbitrationLost = 1)
+$0257: $C004:  C: goto $25C (RJMP) (f_arbitrationLost = 1)
+               F: BASE_ADDR -> TWDR  ...
+$0258: $E400:     $40 -> r16
+$0259: $9300:     r16 -> [$00BB]
+$025A: $00BB:  
+$025B: $D05A:  F: rcall $2B6 (_iic_send_)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\iic.alg    ***********
+-----          L: 
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\r8.alg    ***********
+-----          L: 
+$025C: $FD30:  C: if (r19.0=0 then SKIP (f_arbitrationLost = 1)
+$025D: $C003:  C: goto $261 (RJMP) (f_arbitrationLost = 1)
+$025E: $9360:  F: r22 -> [$00BB] (r8_temp -> TWDR)
+$025F: $00BB:  
+$0260: $D055:  F: rcall $2B6 (_iic_send_)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\iic.alg    ***********
+-----          L: 
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\r8.alg    ***********
+-----          L: 
+$0261: $D066:  F: rcall $2C8 (_iic_stop)
+-----          L: 
+$0262: $FD30:  C: if (r19.0=0 then SKIP (f_arbitrationLost = 1)
+$0263: $CFF1:  C: goto $255 (RJMP) (f_arbitrationLost = 1)
+$0264: $9508:  F: RET (RET)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\iic.alg    ***********
+-----          V: TWI_Finished
+$0265: $930F:  F: r16 -> (r16 ->)
+$0266: $931F:  F: r17 -> (r17 ->)
+               F: SREG ->  ...
+$0267: $B70F:     p$3F -> r16
+$0268: $930F:     r16 ->
+-----          L: 
+$0269: $9140:  F: [$00B9] -> r20 (TWSR -> iic_status)
+$026A: $00B9:  
+$026B: $7F48:  F: r20 & $F8 (iic_status & $F8)
+-----          L: 
+-----          L: 
+-----          L: 
+               C: if (iic_status -= SR_SLA_ACK) then goto $0272 ...
+$026C: $3640:     r20 = $60
+$026D: $F421:     if (Z=0) then goto $272
+-----          L: 
+$026E: $E805:  S: $85 -> r16 ($85->r16)
+$026F: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$0270: $00BC:  
+$0271: $C020:  J: goto $292 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (iic_status -= SR_DATA_NACK) then goto $027B ...
+$0272: $3848:     r20 = $88
+$0273: $F439:     if (Z=0) then goto $27B
+-----          L: 
+$0274: $9100:  F: [$00BB] -> r16 (TWDR -> r16)
+$0275: $00BB:  
+$0276: $DF66:  F: rcall $1DD (_r8_parseData)
+-----          L: 
+$0277: $EC05:  S: $C5 -> r16 ($C5->r16)
+$0278: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$0279: $00BC:  
+$027A: $C017:  J: goto $292 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (iic_status -= SR_START) then goto $0282 ...
+$027B: $3A40:     r20 = $A0
+$027C: $F429:     if (Z=0) then goto $282
+$027D: $EC05:  S: $C5 -> r16 ($C5->r16)
+$027E: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$027F: $00BC:  
+$0280: $6031:  F: r19 ! $01 (1 -> f_arbitrationLost)
+$0281: $C010:  J: goto $292 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (iic_status -= ERROR) then goto $0289 ...
+$0282: $3040:     r20 = $00
+$0283: $F429:     if (Z=0) then goto $289
+$0284: $ED05:  S: $D5 -> r16 ($D5->r16)
+$0285: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$0286: $00BC:  
+$0287: $6031:  F: r19 ! $01 (1 -> f_arbitrationLost)
+$0288: $C009:  J: goto $292 (RJMP)
+-----          L: 
+-----          L: 
+               C: if (iic_status -= MT_ATRIB_LOST) then goto $028F ...
+$0289: $3348:     r20 = $38
+$028A: $F421:     if (Z=0) then goto $28F
+$028B: $EC05:  S: $C5 -> r16 ($C5->r16)
+$028C: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$028D: $00BC:  
+$028E: $6031:  F: r19 ! $01 (1 -> f_arbitrationLost)
+-----          L: 
+-----          L: 
+$028F: $E004:  S: $04 -> r16 ($04->r16)
+$0290: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$0291: $00BC:  
+-----          L: 
+-----          L: _END_TWI_Finished
+               F: -> SREG  ...
+$0292: $910F:     -> r16
+$0293: $BF0F:     r16 -> p$3F
+$0294: $911F:  F: -> r17 (-> r17)
+$0295: $910F:  F: -> r16 (-> r16)
+$0296: $9518:  F: RETI (RETI)
+-----          V: _iic_init
+$0297: $9A45:  F: 1 -> p$08.5 (1 -> PortC.5)
+$0298: $9A44:  F: 1 -> p$08.4 (1 -> PortC.4)
+-----          L: 
+$0299: $E000:  S: $00 -> r16 ($00->r16)
+$029A: $9300:  S: r16 -> [$00B9] (r16->TWSR)
+$029B: $00B9:  
+$029C: $E00C:  S: $0C -> r16 ($0C->r16)
+$029D: $9300:  S: r16 -> [$00B8] (r16->TWBR)
+$029E: $00B8:  
+$029F: $E402:  S: $42 -> r16 ($42->r16)
+$02A0: $9300:  S: r16 -> [$00BA] (r16->TWAR)
+$02A1: $00BA:  
+$02A2: $E405:  S: $45 -> r16 ($45->r16)
+$02A3: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$02A4: $00BC:  
+-----          L: 
+$02A5: $9508:  F: RET (RET)
+-----          V: _iic_start
+$02A6: $FD30:  C: if (r19.0=0 then SKIP (f_arbitrationLost = 1)
+$02A7: $9508:  F: RET (RET)
+$02A8: $94F8:  F: 0 -> I (0 -> I)
+$02A9: $EF48:  F: $F8 -> r20 (NO_INFO -> iic_status)
+$02AA: $EE05:  S: $E5 -> r16 ($E5->r16)
+$02AB: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$02AC: $00BC:  
+$02AD: $9478:  F: 1 -> I (1 -> I)
+-----          L: 
+-----          L: 
+$02AE: $FD30:  C: if (r19.0=0 then SKIP (f_arbitrationLost = 1)
+$02AF: $C005:  C: goto $2B5 (RJMP) (f_arbitrationLost = 1)
+-----          L: 
+               C: if (iic_status = START) then goto $02B5 ...
+$02B0: $3048:     r20 = $08
+$02B1: $F019:     if (Z=1) then goto $2B5
+               C: if (iic_status = RSTART) then goto $02B5 ...
+$02B2: $3140:     r20 = $10
+$02B3: $F009:     if (Z=1) then goto $2B5
+$02B4: $CFF9:  J: goto $2AE (RJMP)
+-----          L: 
+-----          L: 
+$02B5: $9508:  F: RET (RET)
+-----          V: _iic_send_
+$02B6: $94F8:  F: 0 -> I (0 -> I)
+$02B7: $EF48:  F: $F8 -> r20 (NO_INFO -> iic_status)
+$02B8: $EC05:  S: $C5 -> r16 ($C5->r16)
+$02B9: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$02BA: $00BC:  
+$02BB: $9478:  F: 1 -> I (1 -> I)
+-----          L: 
+-----          L: 
+$02BC: $FD30:  C: if (r19.0=0 then SKIP (f_arbitrationLost = 1)
+$02BD: $C009:  C: goto $2C7 (RJMP) (f_arbitrationLost = 1)
+-----          L: 
+               C: if (iic_status = MT_SLA_ACK) then goto $02C7 ...
+$02BE: $3148:     r20 = $18
+$02BF: $F039:     if (Z=1) then goto $2C7
+               C: if (iic_status = MT_SLA_NACK) then goto $02C7 ...
+$02C0: $3240:     r20 = $20
+$02C1: $F029:     if (Z=1) then goto $2C7
+               C: if (iic_status = MT_DATA_ACK) then goto $02C7 ...
+$02C2: $3248:     r20 = $28
+$02C3: $F019:     if (Z=1) then goto $2C7
+               C: if (iic_status = MT_DATA_NACK) then goto $02C7 ...
+$02C4: $3340:     r20 = $30
+$02C5: $F009:     if (Z=1) then goto $2C7
+$02C6: $CFF5:  J: goto $2BC (RJMP)
+-----          L: 
+-----          L: 
+$02C7: $9508:  F: RET (RET)
+-----          V: _iic_stop
+$02C8: $FD30:  C: if (r19.0=0 then SKIP (f_arbitrationLost = 1)
+$02C9: $9508:  F: RET (RET)
+$02CA: $94F8:  F: 0 -> I (0 -> I)
+$02CB: $EF48:  F: $F8 -> r20 (NO_INFO -> iic_status)
+$02CC: $ED05:  S: $D5 -> r16 ($D5->r16)
+$02CD: $9300:  S: r16 -> [$00BC] (r16->TWCR)
+$02CE: $00BC:  
+$02CF: $9478:  F: 1 -> I (1 -> I)
+$02D0: $0000:  F: NOP (NOP)
+$02D1: $0000:  F: NOP (NOP)
+$02D2: $0000:  F: NOP (NOP)
+$02D3: $0000:  F: NOP (NOP)
+$02D4: $0000:  F: NOP (NOP)
+$02D5: $0000:  F: NOP (NOP)
+$02D6: $0000:  F: NOP (NOP)
+$02D7: $0000:  F: NOP (NOP)
+$02D8: $0000:  F: NOP (NOP)
+$02D9: $0000:  F: NOP (NOP)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\Wait.alg    ***********
+-----          L: 
+               F: (100*CPU_Clock_Frequency/1000000-2)/4 -> r16:Word  ...
+$02DA: $EC07:     $C7 -> r16
+$02DB: $E010:     $00 -> r17
+-----          L: 
+               C: if (r16:Word --) then goto $02DC ...
+$02DC: $5001:     r16 - $01
+$02DD: $4010:     r17 - $00 -
+$02DE: $F7E9:     if (Z=0) then goto $2DC
+$02DF: $0000:  F: NOP (NOP)
+-----          L: 
+-----          L: 
+-----          L: 
+$02E0: $0000:  F: NOP (NOP)
+-----          L: 
+$02E1: $0000:  F: NOP (NOP)
+-----          L: 
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\iic.alg    ***********
+-----          L: 
+$02E2: $9508:  F: RET (RET)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\main.alp    ***********
+-----          V: Reset
+$02E3: $EF0F:  S: $FF -> r16 ($FF->r16)
+$02E4: $BF0D:  S: r16 -> p$3D (r16->p61)
+$02E5: $E002:  S: $02 -> r16 ($02->r16)
+$02E6: $BF0E:  S: r16 -> p$3E (r16->p62)
+-----          L: 
+$02E7: $9100:  S: [$0060] -> r16 (WDTCSR->r16)
+$02E8: $0060:  
+$02E9: $6108:  S: r16 ! $18 (r16 ! $18)
+$02EA: $9300:  S: r16 -> [$0060] (r16->WDTCSR)
+$02EB: $0060:  
+$02EC: $E00E:  S: $0E -> r16 ($0E->r16)
+$02ED: $9300:  S: r16 -> [$0060] (r16->WDTCSR)
+$02EE: $0060:  
+$02EF: $95A8:  S: WDR (WDR)
+-----          L: 
+               F: 100-1 -> r16:Word  ...
+$02F0: $E603:     $63 -> r16
+$02F1: $E010:     $00 -> r17
+$02F2: $DD27:  F: rcall $1A (_Wait_ms_)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\Wait.alg    ***********
+-----          L: 
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\main.alp    ***********
+-----          L: 
+               F: SRAM_Org -> Z  ...
+$02F3: $E0E0:     $00 -> r30
+$02F4: $E0F1:     $01 -> r31
+$02F5: $E000:  F: $00 -> r16 (0 -> r16)
+-----          L: 
+$02F6: $9301:  F: r16 -> [Z++] (r16 -> [Z++])
+               C: if (Z -= SRAM_Size) then goto $02F6 ...
+$02F7: $30E0:     r30 = $00
+$02F8: $E013:     $03 -> r17
+$02F9: $07F1:     r31 = r17=
+$02FA: $F7D9:     if (Z=0) then goto $2F6
+-----          L: 
+               F: 30 -> Z  ...
+$02FB: $E1EE:     $1E -> r30
+$02FC: $E0F0:     $00 -> r31
+-----          L: 
+$02FD: $95EA:  F: r30 -- (ZL --)
+$02FE: $8300:  F: r16 -> [Z] (r16 -> [Z])
+$02FF: $F7E9:  C: if (Z=0) then goto $2FD (-=)
+-----          L: 
+-----          L: 
+$0300: $2733:  F: ^ r19 (^Flags)
+-----          L: 
+-----          L: 
+$0301: $DD39:  F: rcall $3B (_PWM_Init)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0302: $DDB0:  F: rcall $B3 (_EX_Key_Init)
+-----          L: 
+-----          L: 
+-----          L: 
+$0303: $DEC5:  F: rcall $1C9 (_STimer_Init)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0304: $DECE:  F: rcall $1D3 (_r8_init)
+-----          L: 
+$0305: $DF91:  F: rcall $297 (_iic_init)
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0306: $9478:  F: 1 -> I (1 -> I)
+-----          L: 
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\Programm.alg    ***********
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+               F: 300/STIMER_PERIOD_CALL -> [@STimer_Counter + ADDRESS_CHANGE]  ...
+$0307: $E10E:     $1E -> r16
+$0308: $9300:     r16 -> [$0115]
+$0309: $0115:  
+               F: 300/STIMER_PERIOD_CALL -> [@STimer_Counter_Stop + ADDRESS_CHANGE]  ...
+$030A: $9300:     r16 -> [$0116]
+$030B: $0116:  
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\Wait.alg    ***********
+-----          L: 
+               F: (500*CPU_Clock_Frequency/1000000-2)/4 -> r16:Word  ...
+$030C: $EE07:     $E7 -> r16
+$030D: $E013:     $03 -> r17
+-----          L: 
+               C: if (r16:Word --) then goto $030E ...
+$030E: $5001:     r16 - $01
+$030F: $4010:     r17 - $00 -
+$0310: $F7E9:     if (Z=0) then goto $30E
+$0311: $0000:  F: NOP (NOP)
+-----          L: 
+-----          L: 
+-----          L: 
+$0312: $0000:  F: NOP (NOP)
+-----          L: 
+$0313: $0000:  F: NOP (NOP)
+-----          L: 
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\Programm.alg    ***********
+-----          L: 
+               F: LOW -> [@PWM_Level + RELEY_0]  ...
+$0314: $E000:     $00 -> r16
+$0315: $9300:     r16 -> [$0100]
+$0316: $0100:  
+               F: LOW -> [@PWM_Level + RELEY_1]  ...
+$0317: $9300:     r16 -> [$0101]
+$0318: $0101:  
+               F: LOW -> [@PWM_Level + RELEY_2]  ...
+$0319: $9300:     r16 -> [$0102]
+$031A: $0102:  
+               F: LOW -> [@PWM_Level + RELEY_3]  ...
+$031B: $9300:     r16 -> [$0103]
+$031C: $0103:  
+               F: LOW -> [@PWM_Level + RELEY_4]  ...
+$031D: $9300:     r16 -> [$0104]
+$031E: $0104:  
+               F: LOW -> [@PWM_Level + RELEY_5]  ...
+$031F: $9300:     r16 -> [$0105]
+$0320: $0105:  
+               F: LOW -> [@PWM_Level + RELEY_6]  ...
+$0321: $9300:     r16 -> [$0106]
+$0322: $0106:  
+               F: LOW -> [@PWM_Level + RELEY_7]  ...
+$0323: $9300:     r16 -> [$0107]
+$0324: $0107:  
+-----          L: 
+-----          L: 
+-----          L: 
+-----          L: 
+$0325: $FF50:  C: if (r21.0=1 then SKIP (r8_status.0 = 0)
+$0326: $C005:  C: goto $32C (RJMP) (r8_status.0 = 0)
+$0327: $E000:  F: $00 -> r16 (0 -> r16)
+$0328: $DF02:  F: rcall $22B (_r8_getData_)
+$0329: $2F60:  F: r16 -> r22 (r16 -> r8_temp)
+$032A: $DF2A:  F: rcall $255 (_r8_sendToBase_)
+$032B: $7F5E:  F: r21 & $FE (0 -> r8_status.0)
+-----          L: 
+$032C: $0000:  F: NOP (NOP)
+-----          L: 
+$032D: $FF51:  C: if (r21.1=1 then SKIP (r8_status.1 = 0)
+$032E: $C005:  C: goto $334 (RJMP) (r8_status.1 = 0)
+$032F: $E001:  F: $01 -> r16 (1 -> r16)
+$0330: $DEFA:  F: rcall $22B (_r8_getData_)
+$0331: $2F60:  F: r16 -> r22 (r16 -> r8_temp)
+$0332: $DF22:  F: rcall $255 (_r8_sendToBase_)
+$0333: $7F5D:  F: r21 & $FD (0 -> r8_status.1)
+-----          L: 
+$0334: $0000:  F: NOP (NOP)
+-----          L: 
+$0335: $FF52:  C: if (r21.2=1 then SKIP (r8_status.2 = 0)
+$0336: $C005:  C: goto $33C (RJMP) (r8_status.2 = 0)
+$0337: $E002:  F: $02 -> r16 (2 -> r16)
+$0338: $DEF2:  F: rcall $22B (_r8_getData_)
+$0339: $2F60:  F: r16 -> r22 (r16 -> r8_temp)
+$033A: $DF1A:  F: rcall $255 (_r8_sendToBase_)
+$033B: $7F5B:  F: r21 & $FB (0 -> r8_status.2)
+-----          L: 
+$033C: $0000:  F: NOP (NOP)
+-----          L: 
+$033D: $FF53:  C: if (r21.3=1 then SKIP (r8_status.3 = 0)
+$033E: $C005:  C: goto $344 (RJMP) (r8_status.3 = 0)
+$033F: $E003:  F: $03 -> r16 (3 -> r16)
+$0340: $DEEA:  F: rcall $22B (_r8_getData_)
+$0341: $2F60:  F: r16 -> r22 (r16 -> r8_temp)
+$0342: $DF12:  F: rcall $255 (_r8_sendToBase_)
+$0343: $7F57:  F: r21 & $F7 (0 -> r8_status.3)
+-----          L: 
+$0344: $0000:  F: NOP (NOP)
+-----          L: 
+$0345: $FF54:  C: if (r21.4=1 then SKIP (r8_status.4 = 0)
+$0346: $C005:  C: goto $34C (RJMP) (r8_status.4 = 0)
+$0347: $E004:  F: $04 -> r16 (4 -> r16)
+$0348: $DEE2:  F: rcall $22B (_r8_getData_)
+$0349: $2F60:  F: r16 -> r22 (r16 -> r8_temp)
+$034A: $DF0A:  F: rcall $255 (_r8_sendToBase_)
+$034B: $7E5F:  F: r21 & $EF (0 -> r8_status.4)
+-----          L: 
+$034C: $0000:  F: NOP (NOP)
+-----          L: 
+$034D: $FF55:  C: if (r21.5=1 then SKIP (r8_status.5 = 0)
+$034E: $C005:  C: goto $354 (RJMP) (r8_status.5 = 0)
+$034F: $E005:  F: $05 -> r16 (5 -> r16)
+$0350: $DEDA:  F: rcall $22B (_r8_getData_)
+$0351: $2F60:  F: r16 -> r22 (r16 -> r8_temp)
+$0352: $DF02:  F: rcall $255 (_r8_sendToBase_)
+$0353: $7D5F:  F: r21 & $DF (0 -> r8_status.5)
+-----          L: 
+$0354: $0000:  F: NOP (NOP)
+-----          L: 
+$0355: $FF56:  C: if (r21.6=1 then SKIP (r8_status.6 = 0)
+$0356: $C005:  C: goto $35C (RJMP) (r8_status.6 = 0)
+$0357: $E006:  F: $06 -> r16 (6 -> r16)
+$0358: $DED2:  F: rcall $22B (_r8_getData_)
+$0359: $2F60:  F: r16 -> r22 (r16 -> r8_temp)
+$035A: $DEFA:  F: rcall $255 (_r8_sendToBase_)
+$035B: $7B5F:  F: r21 & $BF (0 -> r8_status.6)
+-----          L: 
+$035C: $0000:  F: NOP (NOP)
+-----          L: 
+$035D: $FF57:  C: if (r21.7=1 then SKIP (r8_status.7 = 0)
+$035E: $C005:  C: goto $364 (RJMP) (r8_status.7 = 0)
+$035F: $E007:  F: $07 -> r16 (7 -> r16)
+$0360: $DECA:  F: rcall $22B (_r8_getData_)
+$0361: $2F60:  F: r16 -> r22 (r16 -> r8_temp)
+$0362: $DEF2:  F: rcall $255 (_r8_sendToBase_)
+$0363: $775F:  F: r21 & $7F (0 -> r8_status.7)
+-----          L: 
+$0364: $0000:  F: NOP (NOP)
+-----          L: 
+$0365: $95A8:  F: WDR (WDR)
+-----          L: 
+$0366: $CFBE:  J: goto $325 (RJMP)
+*********   D:\anwork\multiswitch\MultiSwitch_MCU_r8\main.alp    ***********
+-----          L: 
+-----          L: 
+-----          L: 
+$0367: $CFFF:  J: goto $367 (RJMP)

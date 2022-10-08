@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" height="100" width="100">
+	<defs>
+		<marker id="a" orient="auto" overflow="visible"><path class="c e i" d="M.508 0l-3.46 2v-4z"/></marker>
+		<marker id="b" orient="auto" overflow="visible"><path class="c e i" d="M.508 0l-3.46 2v-4z"/></marker>
+	</defs>
+	<style>
+		circle,path,rect{stroke-linecap:round;stroke-linejoin:round}
+		.a{fill:none}.b{fill:#e66}.c{fill:#777}
+		.d{stroke:#e66}.e{stroke:#777}
+		.f{paint-order:stroke fill markers}
+		.g{cx:50;cy:50}
+		.h{stroke-width:2}
+		.i{stroke-width:.5}
+	</style>
+	<circle class="a d f g" r="46.5" stroke-width="7"/>
+	<circle class="a f g" r="49.5" stroke="#555" stroke-width="1"/>
+	<path class="a d" d="M42.5 44.535v20.93M62.464 44.5h-9.928M52.5 44.535v20.93M62.464 54.5h-9.928" stroke-width="5"/>
+	<rect class="b e f" width="11" height="11" x="66" y="67" rx="3" ry="3" stroke-width="4"/>
+	<rect class="a e f h" width="13" height="13" x="21" y="21" rx="7" ry="7"/>
+	<path class="a e f h" d="M37.963 18.99a33.264 33.264 0 0 1 35.482 7.414 33.264 33.264 0 0 1 7.64 35.434" marker-end="url(#a)"/>
+	<path class="a e f h" d="M-61.835-82.277a33.264 33.264 0 0 1 35.274 7.67 33.264 33.264 0 0 1 7.512 35.306" transform="scale(-1)" marker-end="url(#b)"/>
+	<circle class="b f" cx="42.5" cy="37.5" r="2.5"/>
+</svg>
